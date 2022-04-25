@@ -1,5 +1,4 @@
 #include "lists.h"
-#include <stddef.h>
 /**
  * check_cycle - check_cycle
  * @list: pointer
