@@ -10,8 +10,8 @@ int check_cycle(listint_t *list)
 
 	while (aux2 && aux && aux2->next)
 	{
-		aux = aux->next;
 		aux2 = aux2->next->next;
+		aux = aux->next;
 		if (aux == aux2)
 			return (1);
 	}
