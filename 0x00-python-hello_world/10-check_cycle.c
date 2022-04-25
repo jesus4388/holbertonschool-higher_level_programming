@@ -7,17 +7,12 @@ int check_cycle(listint_t *list)
 	listint_t *aux = list;
 	listint_t *aux2 = list;
 
-	while(aux2 != NULL)
+	while(aux2)
 	{
 		aux = aux->next;
-		aux2 = aux->next->next;
+		aux2 = aux2->next->next;
 		if (aux == aux2)
-			break;
-		if (aux2 == NULL)
-			break;
+			return(1);
 	}
-	if (aux == aux2)
-		return(1);
-	else
-		return(0);
+	return(0);
 }
