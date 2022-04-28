@@ -9,7 +9,6 @@ if __name__ == "__main__":
     elif n > 2:
         for i in range(1, n):
             add += int(sys.argv[i])
-            i = i + 1
-            print(f"{add}")
+        print(f"{add}")
     else:
-        print(0)
+        print('0')
