@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 def multiple_returns(sentence):
     a = len(sentence)
-    b = sentence[0]
-    return a, b
+    if a == 0:
+        return None
+    else:
+        b = sentence[0]
+        return a, b
