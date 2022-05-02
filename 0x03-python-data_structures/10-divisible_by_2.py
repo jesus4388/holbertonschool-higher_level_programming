@@ -8,5 +8,3 @@ def divisible_by_2(my_list=[]):
             else:
                 copy[i] = False
         return copy
-    else:
-        return None
