@@ -7,5 +7,5 @@ def max_integer(my_list=[]):
                 a = i
         if a == 0:
             return None
-        else
+        else:
             return a
