@@ -8,7 +8,7 @@ def roman_to_int(roman_string):
     D = 0
     c = 0
     a = 0
-    if roman_string is None:
+    if roman_string is None or type(roman_string) != str:
         return 0
     if roman_string:
         for j in roman_string:
@@ -30,6 +30,4 @@ def roman_to_int(roman_string):
                 a = 0
             else:
                 b = b + c
-    else:
-        return 0
     return b
