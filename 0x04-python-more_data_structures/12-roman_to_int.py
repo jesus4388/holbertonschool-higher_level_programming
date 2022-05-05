@@ -7,7 +7,7 @@ def roman_to_int(roman_string):
     C = 0
     D = 0
     c = 0
-    a = 0
+    a = 1
     M = 0
     if roman_string is None or type(roman_string) != str:
         return 0
@@ -15,7 +15,6 @@ def roman_to_int(roman_string):
         for j in roman_string:
             if j == 'I':
                 c = 1
-                a = 1
             if j == 'V':
                 c = 5
             if j == 'X':
@@ -28,9 +27,11 @@ def roman_to_int(roman_string):
                 c = 500
             if j == 'M':
                 c = 1000
-            if a == 1 and c > 1:
-                b = b + c - 2
-                a = 0
+            if a < c:
+                b = c - b
+                a = c
             else:
                 b = b + c
+                if b > 1000:
+                    b = 1000 - 10
     return b
