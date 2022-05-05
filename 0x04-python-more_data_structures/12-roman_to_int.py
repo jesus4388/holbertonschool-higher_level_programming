@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
     b = 0
-    I = 0
     V = 0
     X = 0
     L = 0
@@ -9,24 +8,24 @@ def roman_to_int(roman_string):
     D = 0
     c = 0
     a = 0
-    if roman_string == None:
+    if roman_string is None:
         return 0
     if roman_string:
-        for i in roman_string:
-            if i == 'I':
+        for j in roman_string:
+            if j == 'I':
                 c = 1
                 a = 1
-            if i == 'V':
+            if j == 'V':
                 c = 5
-            if i == 'X':
+            if j == 'X':
                 c = 10
-            if i == 'L':
+            if j == 'L':
                 c = 50
-            if i == 'C':
+            if j == 'C':
                 c = 100
-            if i == 'D':
-                c = 500 
-            if  a == 1 and c > 1:
+            if j == 'D':
+                c = 500
+            if a == 1 and c > 1:
                 b = b + c - 2
                 a = 0
             else:
