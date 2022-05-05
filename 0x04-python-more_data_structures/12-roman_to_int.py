@@ -32,6 +32,4 @@ def roman_to_int(roman_string):
                 a = c
             else:
                 b = b + c
-                if b > 1000:
-                    b = 1000 - 10
     return b
