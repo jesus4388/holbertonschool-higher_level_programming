@@ -8,6 +8,7 @@ def roman_to_int(roman_string):
     D = 0
     c = 0
     a = 0
+    M = 0
     if roman_string is None or type(roman_string) != str:
         return 0
     if roman_string:
@@ -25,6 +26,8 @@ def roman_to_int(roman_string):
                 c = 100
             if j == 'D':
                 c = 500
+            if j == 'M':
+                c = 1000
             if a == 1 and c > 1:
                 b = b + c - 2
                 a = 0
