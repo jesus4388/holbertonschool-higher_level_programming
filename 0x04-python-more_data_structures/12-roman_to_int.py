@@ -6,10 +6,10 @@ def roman_to_int(roman_string):
     if roman_string is None or type(roman_string) != str:
         return 0
     for j in roman_string:
-            for i in roma:
-                if i == j:
-                    if a < roma.get(i):
-                        b = b - (a*2)
-                    b = b + roma.get(i)
-                    a = roma.get(i)
+        for i in roma:
+            if i == j:
+                if a < roma.get(i):
+                    b = b - (a*2)
+                b = b + roma.get(i)
+                a = roma.get(i)
     return b
