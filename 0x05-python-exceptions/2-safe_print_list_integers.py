@@ -9,5 +9,5 @@ def safe_print_list_integers(my_list=[], x=0):
             print("", end="")
         except TypeError:
             print("", end="")
-    print ()
+    print()
     return b
