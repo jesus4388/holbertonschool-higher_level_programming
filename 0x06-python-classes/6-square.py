@@ -12,16 +12,19 @@ class Square:
     '#Public instance method \
             which returns the current square area'
     def area(self):
+        '#size area'
         return self.__size * self.__size
 
     '# property def size(self): to retrieve it'
     @property
     def size(self):
+        '#to retrieve it'
         return self.__size
 
     '# setter property def size(self, value): to set it'
     @size.setter
     def size(self, value):
+        '#to set it'
         if type(value) is not int:
             raise TypeError('size must be an integer')
         if value < 0:
@@ -32,11 +35,13 @@ class Square:
     '# retrieve position and make it private'
     @property
     def position(self):
+        '#to retrive position'
         return self.__position
 
     '# set private position attribute'
     @position.setter
     def position(self, value):
+        '#positio value'
         if value[0] < 0 or value[1] < 0:
             raise TypeError('position must be a tuple of 2 positive integers')
         if type(value) != tuple or len(value) != 2:
