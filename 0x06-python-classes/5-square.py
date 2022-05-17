@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+'# a class Square that defines a square'
+
+
 class Square:
+    '#Private instance attribute: size:'
     def __init__(self, size=0):
         if type(size) is not int:
             raise TypeError('size must be an integer')
@@ -8,13 +12,16 @@ class Square:
         else:
             self.__size = size
 
+    '# Public instance method'
     def area(self):
         return self.__size * self.__size
 
+    '# propiedad def size(self): para recuperarlo'
     @property
     def size(self):
         return self.__size
 
+    '# property setter def size(self, value): to set it'
     @size.setter
     def size(self, value):
         if type(value) is not int:
@@ -24,6 +31,8 @@ class Square:
         else:
             self.__size = value
 
+    """Public instance method, that prints \
+            in stdout the square with the character #"""
     def my_print(self):
         if self.__size == 0:
             print()
