@@ -5,13 +5,9 @@
 class Square:
     '# private instance attribute: size:'
     def __init__(self, size=0, position=(0, 0)):
-        if type(size) is not int:
-            raise TypeError('size must be an integer')
-        if size < 0:
-            raise ValueError('size must be >= 0')
-        else:
-            self.size = size
-            self.position = position
+        '# instance atribute'
+        self.size = size
+        self.position = position
 
     '#Public instance method \
             which returns the current square area'
@@ -46,6 +42,7 @@ class Square:
             raise TypeError('position must be a tuple of 2 positive integers')
         else:
             self.__position = value
+
     '# my print atribute'
     def my_print(self):
         if self.__size == 0:
