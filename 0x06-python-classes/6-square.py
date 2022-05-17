@@ -9,19 +9,15 @@ class Square:
         self.size = size
         self.position = position
 
-    '#Public instance method \
-            which returns the current square area'
     def area(self):
         '#size area'
         return self.__size * self.__size
 
-    '# property def size(self): to retrieve it'
     @property
     def size(self):
         '#to retrieve it'
         return self.__size
 
-    '# setter property def size(self, value): to set it'
     @size.setter
     def size(self, value):
         '#to set it'
