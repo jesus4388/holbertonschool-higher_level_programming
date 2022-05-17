@@ -25,8 +25,9 @@ class Square:
         if type(value) is not int:
             raise TypeError('size must be an integer')
         if value < 0:
-            raise ValueError('size must be an integer')
-        self.__size = value
+            raise ValueError('size must be >= 0')
+        else:
+            self.__size = value
 
     '# retrieve position and make it private'
     @property
