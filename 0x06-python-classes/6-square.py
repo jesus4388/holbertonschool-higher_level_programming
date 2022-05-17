@@ -10,17 +10,17 @@ class Square:
         self.position = position
 
     def area(self):
-        '#size area'
+        '# size area'
         return self.__size * self.__size
 
     @property
     def size(self):
-        '#to retrieve it'
+        '# to retrieve it'
         return self.__size
 
     @size.setter
     def size(self, value):
-        '#to set it'
+        '# to set it'
         if type(value) is not int:
             raise TypeError("size must be an integer")
         if value < 0:
@@ -31,13 +31,13 @@ class Square:
     '# retrieve position and make it private'
     @property
     def position(self):
-        '#to retrive position'
+        '# to retrive position'
         return self.__position
 
     '# set private position attribute'
     @position.setter
     def position(self, value):
-        '#positio value'
+        '# positio value'
         if value[0] < 0 or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         if type(value) != tuple or len(value) != 2:
