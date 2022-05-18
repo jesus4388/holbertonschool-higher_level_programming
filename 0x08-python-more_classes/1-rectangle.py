@@ -7,8 +7,8 @@ class Rectangle:
     '# Private instance attribute: width and height'
     def __init__(self, width=0, height=0):
         '#initiation'
-        self.__height = height
-        self.__width = width
+        self.height = height
+        self.width = width
 
     '# property to get it back'
     @property
