@@ -1,0 +1,95 @@
+IMPORT FUNCITON
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+IMPORT MODULE
+	>>> module = __import__('3-say_my_name')
+
+VERIFICATION DOC MODULE
+	>>> len(module.__doc__) > 1
+	True
+
+VERIFICATION DOC
+	>>> len(say_my_name.__doc__) > 1
+	True
+
+VERIFICATION OF STRING
+	>>> say_my_name("John", "Smith")
+	My name is John Smith
+
+VERIFICATION OF STRING1
+	>>> say_my_name("Walter", "White")
+	My name is Walter White
+
+VERIFICATION OF FIRST NAME
+	>>> say_my_name("Bob")
+	My name is Bob 
+
+VERIFICATION OF FIRST NAME WITCH INTEGER
+	>>> say_my_name(12, "White")
+	Traceback (most recent call last):
+		...
+	TypeError: first_name must be a string
+
+VERIFICATION OF FIRST NAME WITCH INTEGER
+	>>> say_my_name("White", 12)
+	Traceback (most recent call last):
+        	...
+	TypeError: last_name must be a string
+
+VERIFICATION WITH FIRST NAME EMPTY
+	>>> say_my_name("", "white")
+	My name is  white
+
+VERIFICATION WITH CHARACTER
+	>>> say_my_name('h', 'h')
+	My name is h h
+
+CHECKING ARGS:
+	>>> say_my_name("juan", "pedro", "rodriguez")
+	Traceback (most recent call last):
+		...
+	TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
+
+CHEKING BOOL
+	>>> say_my_name(False, "White")
+        Traceback (most recent call last):
+                ...
+        TypeError: first_name must be a string
+
+CHEKING BOOL
+        >>> say_my_name("White", True)
+        Traceback (most recent call last):
+                ...
+        TypeError: last_name must be a string
+
+CHEKING STRING EMPTY
+	>>> say_my_name("", "")
+        My name is  
+
+CHEKING STRING EMPTY
+        >>> say_my_name("")
+        My name is  
+
+VERIFICATION TWO INTEGER
+	>>> say_my_name(4, 4)
+	Traceback (most recent call last):
+		...
+        TypeError: first_name must be a string
+
+VERIFICATION NONE
+	>>> say_my_name(None, None)
+	Traceback (most recent call last):
+		...
+	TypeError: first_name must be a string
+
+VERIFICATION NONE
+        >>> say_my_name("Pedro", None)
+        Traceback (most recent call last):
+                ...
+        TypeError: last_name must be a string
+
+VERIFICATION NONE
+        >>> say_my_name(None, "juan")
+        Traceback (most recent call last):
+                ...
+        TypeError: first_name must be a string

@@ -1,0 +1,90 @@
+IMPORT FUNCTION
+	>>> print_square = __import__('4-print_square').print_square
+
+IMPORT MODULE
+	>>> module = __import__('4-print_square')
+
+VERIFICATION DOC
+	>>> len(print_square.__doc__) > 1
+	True
+
+VERIFICATION DOC
+	>>> len(module.__doc__) > 1
+	True
+
+VERIFICATION INTEGER
+	>>> print_square(4)
+	####
+	####
+	####
+	####
+
+VERIFICATION INTEGER
+	>>> print_square(10)
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+
+VERIFICATION NUMBER 0
+	>>> print_square(0)
+
+VERIFICATION INTEGER
+	>>> print_square(1)
+	#
+
+VERIFICATION INTEGER NEGATIVE
+	>>> print_square(-2)
+	Traceback (most recent call last):
+		...
+	ValueError: size must be >= 0
+
+VERIFICATION CHAR
+	>>> print_square('h')
+	Traceback (most recent call last):
+        	...
+	TypeError: size must be an integer
+
+VERIFICATION STRING
+	>>> print_square("hola")
+	Traceback (most recent call last):
+        	...
+	TypeError: size must be an integer
+
+EMPTY CHAR CHECK
+	>>> print_square('')
+	Traceback (most recent call last):
+        	...
+	TypeError: size must be an integer
+
+EMPTY STRING CHECK
+	>>> print_square("")
+	Traceback (most recent call last):
+       		...
+	TypeError: size must be an integer
+
+CHECK LIST
+	>>> print_square([1])
+	Traceback (most recent call last):
+        	...
+	TypeError: size must be an integer
+
+CHECK NONE
+	>>> print_square([1])
+        Traceback (most recent call last):
+                ...
+        TypeError: size must be an integer
+
+CHECK BOOL
+	>>> print_square(True)
+        #
+
+CHECK BOOL
+        >>> print_square(False)
+

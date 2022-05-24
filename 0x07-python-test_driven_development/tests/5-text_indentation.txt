@@ -1,0 +1,97 @@
+IMPORTED FUNCTION
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+IMPORTED MODULE
+	>>> module = __import__('5-text_indentation')
+
+CHECK DOC
+	>>> len(text_indentation.__doc__) > 1
+	True
+
+CHECK DOC
+	>>> len(module.__doc__) > 1
+	True
+
+CHECK '.' IN THE END
+	>>> text_indentation("Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+	<BLANKLINE>
+
+CHECK '?'
+	>>> text_indentation("Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere?")
+	Quonam modo?
+	<BLANKLINE>
+	Utrum igitur tibi litteram videor an totas paginas commovere?
+	<BLANKLINE>
+
+CHECK ':' AND '.' WITH "    "
+	>>> text_indentation("Non autem hoc:      igitur ne illud quidem. Fortasse id optimum, sed ubi illud:")
+	Non autem hoc:
+	<BLANKLINE>
+	igitur ne illud quidem.
+	<BLANKLINE>
+	Fortasse id optimum, sed ubi illud:
+	<BLANKLINE>
+
+CHECK NUMBER OF INTEGER
+	>>> text_indentation(5)
+	Traceback (most recent call last):
+		...
+	TypeError: text must be a string
+
+CHECK CHARACTER
+	>>> text_indentation('j')
+	j
+
+CHECK CHARACTER WITH '.'
+	>>> text_indentation('j.')
+	j.
+	<BLANKLINE>
+
+EMPTY CHAR CHECK
+	>>> text_indentation('')
+	Traceback (most recent call last):
+        	...
+	TypeError: text must be a string
+
+EMPTY STRING CHECK
+	>>> text_indentation("")
+	Traceback (most recent call last):
+        	...
+	TypeError: text must be a string
+
+CHECK LIST
+	>>> text_indentation(["hola"])
+	Traceback (most recent call last):
+        	...
+	TypeError: text must be a string
+
+EMPTY LIST CHECK
+	>>> text_indentation([])
+	Traceback (most recent call last):
+        	...
+	TypeError: text must be a string
+
+EMPTY NONE
+	>>> text_indentation(None)
+	Traceback (most recent call last):
+                ...
+        TypeError: text must be a string
+
+CHECK BOOL
+	>>> text_indentation(True)
+        Traceback (most recent call last):
+                ...
+        TypeError: text must be a string
+
+CHECK BOOL
+	>>> text_indentation(False)
+        Traceback (most recent call last):
+                ...
+        TypeError: text must be a string
+
+CHECK NUMBER NEGATIVE
+        >>> text_indentation(-1)
+        Traceback (most recent call last):
+                ...
+        TypeError: text must be a string
