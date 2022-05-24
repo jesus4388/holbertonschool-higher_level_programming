@@ -100,3 +100,6 @@ SUM CHECK WITH BOOL
         	...
 	TypeError: b must be an integer
 
+SUM CHECK WITH ONE FLOAT
+        >>> add_integer(4.5)
+        102

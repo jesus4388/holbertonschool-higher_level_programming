@@ -91,3 +91,9 @@ DIVISION BY ZERO
 	Traceback (most recent call last):
 	...
 	ZeroDivisionError: division by zero
+
+MATRIX EMPRTY
+	>>> >>> matrix_divided([])
+        Traceback (most recent call last):
+        ...
+        SyntaxError: invalid syntax

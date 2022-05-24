@@ -28,6 +28,26 @@ class TestMaxInt(unittest.TestCase):
         '#test max float'
         self.assertEqual(max_integer([-3.5, -1.3, -2.2]), -1.3)
 
+    def test_string(self):
+        '# test string'
+        self.assertRaises(TypeError,lambda: max_integer([2, 5, "hello"]), 3)
+
+    def test_float_positive(self):
+        'test float'
+        self.assertEqual(max_integer([3.5, 1.3, 2.2]), 3.5)
+
+    def test_one_number_negative(self):
+        '#test number negative'
+        self.assertTrue(max_integer([1, 2, 3, -4]), 3)
+
+    def test_none(self):
+        '# test none'
+        self.assertRaises(TypeError,lambda: max_integer([2, 5, None]), 3)
+
+    def test_Bool(self):
+        '# test none'
+        self.assertRaises(TypeError,lambda: max_integer([2, 5, 4]), False)
+
 
 
 if __name__ == '__main__':

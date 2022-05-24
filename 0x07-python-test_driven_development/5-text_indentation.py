@@ -14,6 +14,7 @@ def text_indentation(text):
     new = text.replace(". ", ".")
     new = new.replace(": ", ":")
     new = new.replace("? ", "?")
+    new = new.strip(" ")
     for char in new:
         if char in [".", "?", ":"]:
             print(char)
