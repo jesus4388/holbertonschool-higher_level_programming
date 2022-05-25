@@ -115,3 +115,9 @@ SUM CHECK WITH INF
         Traceback (most recent call last):
                 ...
 	OverflowError: cannot convert float infinity to integer
+
+SUM CHECK NAN 
+	>>> add_integer(float('nan'), 3)
+        Traceback (most recent call last):
+                ...
+        ValueError: cannot convert float NaN to integer
