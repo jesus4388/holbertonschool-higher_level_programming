@@ -48,6 +48,14 @@ class TestMaxInt(unittest.TestCase):
         '# test none'
         self.assertRaises(TypeError,lambda: max_integer([2, 5, 4]), False)
 
+    def test_empty(self):
+        '# test empty'
+        self.assertEqual(max_integer([]), None)
+
+    def test_one(self):
+        '# test one element'
+        self.assertEqual(max_integer([1]), 1)
+
 
 
 if __name__ == '__main__':
