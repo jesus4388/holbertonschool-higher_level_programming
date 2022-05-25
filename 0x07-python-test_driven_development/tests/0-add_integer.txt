@@ -105,5 +105,7 @@ SUM CHECK WITH ONE FLOAT
         102
 
 SUM CHECK WITH ONE FLOAT
-	>>> add_integer(1.287358934729, 2.29038720849089)
-	3
+	>>> add_integer(None)
+	Traceback (most recent call last):
+                ...
+        TypeError: a must be an integer
