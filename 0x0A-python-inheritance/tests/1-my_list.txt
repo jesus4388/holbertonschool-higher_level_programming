@@ -1,0 +1,48 @@
+>>> MyList = __import__('1-my_list').MyList
+
+CHECK INTEGER
+	>>> my_list = MyList()
+	>>> my_list.append(1)
+	>>> my_list.append(4)
+	>>> my_list.append(2)
+	>>> my_list.append(3)
+	>>> my_list.append(5)
+	>>> print(my_list)
+	[1, 4, 2, 3, 5]
+
+CHECK INTEGER SORTED
+	>>> my_list = MyList()
+	>>> my_list.append(1)
+	>>> my_list.append(4)
+	>>> my_list.append(2)
+	>>> my_list.append(3)
+	>>> my_list.append(5)
+	>>> my_list.print_sorted()
+	[1, 2, 3, 4, 5]
+
+CHECK INTEGER NEGATIVE
+	>>> my_list = MyList()
+	>>> my_list.append(-1)
+	>>> my_list.append(-4)
+	>>> my_list.append(-2)
+	>>> my_list.append(-3)
+	>>> my_list.append(-5)
+	>>> my_list.print_sorted()
+	[-5, -4, -3, -2, -1]
+
+CHECK CHARACTER
+	>>> my_list = MyList()
+	>>> my_list.append('e')
+	>>> my_list.append('d')
+	>>> my_list.append('c')
+	>>> my_list.append('b')
+	>>> my_list.append('a')
+	>>> my_list.print_sorted()
+	['a', 'b', 'c', 'd', 'e']
+
+CHECK LIST EMPTY
+	>>> my_list = MyList()
+	>>> my_list()
+	Traceback (most recent call last):
+		...
+	TypeError: 'MyList' object is not callable
