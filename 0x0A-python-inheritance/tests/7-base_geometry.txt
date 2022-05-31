@@ -64,3 +64,17 @@ CHECK AREA
 CHECK STRING
 	>>> bg = BaseGeometry()
 	>>> bg.integer_validator("", 9)
+
+CHECK VALUE
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("juan", (5, 6))
+	Traceback (most recent call last):
+		...
+	TypeError: juan must be an integer
+
+CHECK STRING
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("juan")
+	Traceback (most recent call last):
+		...
+	TypeError: integer_validator() missing 1 required positional argument: 'value'
