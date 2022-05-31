@@ -5,9 +5,10 @@
 class MyInt(int):
     '# a class MyInt that inherits from int'
 
-    def MyInt(self):
+    def __init__(self, number):
+        self.number = number
 
-        if self == 3:
+        def __eq__(self, other):
             return False
-        else:
+        def __ne__(self, other):
             return True
