@@ -1,0 +1,10 @@
+#!/usr/bin/python3
+
+
+import json
+
+
+def load_from_json_file(filename):
+    with open(filename, 'r') as f:
+        _read = f.read()
+    return json.loads(_read)
