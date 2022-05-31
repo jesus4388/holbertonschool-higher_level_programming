@@ -78,3 +78,17 @@ CHECK STRING
 	Traceback (most recent call last):
 		...
 	TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+CHECK NONE
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator(None, None)
+	Traceback (most recent call last):
+		...
+	TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+CHECK EMPTY
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator()
+	Traceback (most recent call last):
+		...
+	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
