@@ -5,6 +5,6 @@
 import json
 
 def to_json_string(my_obj):
-    ' method json representation'
+    '# method json representation'
 
     return json.dumps(my_obj)
