@@ -1,4 +1,6 @@
 #/usr/bin/python3
+'# a class Student that defines a student by'
+
 
 class Student:
 
