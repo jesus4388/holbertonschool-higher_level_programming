@@ -39,3 +39,17 @@ CHECK LIST
 	Traceback (most recent call last):
 		...
 	TypeError: jhon must be an integer
+
+CHECK ARG
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("jhon", 4, 5)
+	Traceback (most recent call last):
+		...
+	TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+CHECK DICT
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("dict", {"juan": "3"})
+	Traceback (most recent call last):
+		...
+	TypeError: dict must be an integer
