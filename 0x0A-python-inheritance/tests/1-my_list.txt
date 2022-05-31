@@ -51,4 +51,15 @@ CHECK STRING
 	>>> my_list = MyList()
 	>>> my_list.append("a")
 	>>> my_list.append("b")
+
+CHECK NONE
+	>>> my_list = MyList()
+        >>> my_list.append(None)
+        >>> my_list.append(None)
+
+CHECK SORTED EMPTY
+	>>> my_list.print_sorted()
+	Traceback (most recent call last):
+		...
+	TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
 	
