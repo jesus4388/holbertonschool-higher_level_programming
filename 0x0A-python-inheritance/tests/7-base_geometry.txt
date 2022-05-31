@@ -32,3 +32,10 @@ CHECK VALUE NEGATIVE
 	Traceback (most recent call last):
 		...
 	ValueError: distance must be greater than 0
+
+CHECK LIST
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("jhon", [4, 5])
+	Traceback (most recent call last):
+		...
+	TypeError: jhon must be an integer
