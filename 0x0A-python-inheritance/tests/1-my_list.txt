@@ -46,3 +46,9 @@ CHECK LIST EMPTY
 	Traceback (most recent call last):
 		...
 	TypeError: 'MyList' object is not callable
+
+CHECK STRING
+	>>> my_list = MyList()
+	>>> my_list.append("a")
+	>>> my_list.append("b")
+	
