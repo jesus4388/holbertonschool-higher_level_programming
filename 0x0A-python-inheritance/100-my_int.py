@@ -8,8 +8,8 @@ class MyInt(int):
     def __init__(self, number):
         self.number = number
 
-        def __eq__(self, other):
-            return False
+    def __eq__(self, other):
+        return False
 
-        def __ne__(self, other):
-            return True
+    def __ne__(self, other):
+        return True
