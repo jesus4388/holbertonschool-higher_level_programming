@@ -21,7 +21,6 @@ class Student:
                 for x in attrs:
                     if key == x:
                         _dict.update({key: value})
-            return _dict
 
     def reload_from_json(self, json):
         for key, value in json.item():
