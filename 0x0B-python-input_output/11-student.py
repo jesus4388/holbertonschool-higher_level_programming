@@ -15,15 +15,15 @@ class Student:
         for x in attrs:
             if type(x) is str:
                 return self.__dict__
-        else:
-            _dict = {}
-            for key, value in self.__dict__.item():
-                for x in attrs:
-                    if key == x:
-                        _dict.update({key: value})
+
+        _dict = {}
+        for key, value in self.__dict__.item():
+            for x in attrs:
+                if key == x:
+                    _dict.update({key: value})
 
     def reload_from_json(self, json):
         for key, value in json.item():
             for i, j in self.__dict__.item():
                 if key == i:
-                    self.__dict.update({key: value})
+                    self.__dict__.update({key: value})
