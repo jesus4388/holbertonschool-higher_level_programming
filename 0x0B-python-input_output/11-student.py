@@ -18,7 +18,7 @@ class Student:
         if type(attrs) is not list:
             return self.__dict__
         if all(isinstance(_str, str)for _str in attrs):
-            for key, value in self.__dict__.item():
+            for key, value in self.__dict__.items():
                 if key in attrs:
                     dict1[key] = value
             return dict1
@@ -28,6 +28,8 @@ class Student:
     def reload_from_json(self, json):
         '#replaces all atributes'
 
-        for key in self.__dict__:
-            self.__dict__[key] = json[key]
+        for key, value in self.__dict__.items():
+            if key in json:
+                self.__dict__[key] = json[key]
+
         return self.__dict__
