@@ -4,7 +4,9 @@
 
 
 def pascal_triangle(n):
-    if n > 0:
+    if n <= 0:
+        return []
+    else:
         lists = []
         for i in range(n):
             row = [1]
@@ -13,5 +15,3 @@ def pascal_triangle(n):
                     row.append(sum(lists[-1][x:x+2]))
             lists.append(row)
         return lists
-    else:
-        return []
