@@ -1,12 +1,16 @@
 #!/usr/bin/python3
+'# class Rectangle that inherits from Base'
 
 
 from models.base import Base
+'# import class base'
 
 
 class Rectangle(Base):
+    '# class rectangle'
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        '# class constructor'
 
         self.width = width
         self.height = height
@@ -14,7 +18,9 @@ class Rectangle(Base):
         self.y = y
 
         super().__init__(id)
+        '# call the super class'
 
+    '# validation method width'
     @property
     def width(self):
         return self.__width
@@ -28,6 +34,7 @@ class Rectangle(Base):
         else:
             self.__width = value
 
+    '# validation method height'
     @property
     def height(self):
         return self.__height
@@ -41,6 +48,7 @@ class Rectangle(Base):
         else:
             self.__height = value
 
+    '# validation method x'
     @property
     def x(self):
         return self.__x
@@ -54,6 +62,7 @@ class Rectangle(Base):
         else:
             self.__x = value
 
+    '# validation method y'
     @property
     def y(self):
         return self.__y
@@ -67,9 +76,11 @@ class Rectangle(Base):
         else:
             self.__y = value
 
+    '# public method area'
     def area(self):
         return self.__width * self.__height
 
+    '# public method that prints in stdout #'
     def display(self):
         for line in range(self.__y):
             print()
@@ -80,10 +91,12 @@ class Rectangle(Base):
                 print('#', end="")
             print()
 
+    '# overriding the str method'
     def __str__(self):
         return f"[Rectangle] ({self.id}) {self.x}/{self.y}\
  - {self.width}/{self.height}"
 
+    '# print in stdout the rectangle isinstance with #'
     def update(self, *args, **kwargs):
         flag = 0
         for i in args:
@@ -110,6 +123,6 @@ class Rectangle(Base):
                     self.__x = value
                 if key == 'y':
                     self.__y = value
-   
+    '# assign an argument to each attribute'
     def to_dictionary(self):
         return {'x': self.__x, 'y': self.__y, 'id': self.id, 'height': self.__height, 'width': self.__width}
