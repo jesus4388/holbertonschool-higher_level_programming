@@ -7,7 +7,7 @@ import json
 
 
 class Base:
-'# first class base'
+    '# first class base'
 
 
     __nb_objects = 0
@@ -55,6 +55,3 @@ class Base:
         new = cls(1, 2)
         new.update(**dictionary)
         return(new)
-
-    @classmethod
-    def load_from_file(cls):

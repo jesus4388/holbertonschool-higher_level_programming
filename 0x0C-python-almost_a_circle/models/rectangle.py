@@ -109,7 +109,7 @@ class Rectangle(Base):
             if flag == 3:
                 self.__x = i
             if flag == 4:
-                self.__y == i
+                self.__y = i
             flag += 1
         if len(args) < 1:
             for key, value in kwargs.items():
@@ -123,6 +123,7 @@ class Rectangle(Base):
                     self.__x = value
                 if key == 'y':
                     self.__y = value
+
     '# assign an argument to each attribute'
     def to_dictionary(self):
         return {'x': self.__x, 'y': self.__y, 'id': self.id, 'height': self.__height, 'width': self.__width}
