@@ -23,7 +23,7 @@ class Base:
 
     def to_json_string(list_dictionaries):
         '# return representation string of json'
-        if len(list_dictionaries) == 0 or list_dictionaries == (None):
+        if len(list_dictionaries) == 0 or list_dictionaries is None:
             list_dictionaries = []
             return list_dictionaries
         else:
@@ -33,7 +33,7 @@ class Base:
     def save_to_file(cls, list_objs):
         '# save to file'
         lists = []
-        if list_objs == (None):
+        if list_objs is None:
             with open(cls.__name__ + ".json", "w") as f:
                 f.write([])
         else:
@@ -45,7 +45,7 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         '# from json string'
-        if json_string == (None) or len(json_string) == 0:
+        if json_string is None or len(json_string) == 0:
             return []
         else:
             return json.loads(json_string)
@@ -63,7 +63,7 @@ class Base:
         filename = cls.__name__ + ".json"
         new = {}
         lists = []
-        if cls == (None):
+        if cls is None:
             return new
         else:
             with open(filename, "r") as f:
