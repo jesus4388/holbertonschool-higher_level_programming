@@ -20,9 +20,9 @@ class Rectangle(Base):
         super().__init__(id)
         '# call the super class'
 
-    '# validation method width'
     @property
     def width(self):
+        '# validation method width'
         return self.__width
 
     @width.setter
@@ -34,9 +34,9 @@ class Rectangle(Base):
         else:
             self.__width = value
 
-    '# validation method height'
     @property
     def height(self):
+        '# validation method height'
         return self.__height
 
     @height.setter
@@ -48,9 +48,9 @@ class Rectangle(Base):
         else:
             self.__height = value
 
-    '# validation method x'
     @property
     def x(self):
+        '# validation method x'
         return self.__x
 
     @x.setter
@@ -62,9 +62,9 @@ class Rectangle(Base):
         else:
             self.__x = value
 
-    '# validation method y'
     @property
     def y(self):
+        '# validation method y'
         return self.__y
 
     @y.setter
@@ -76,12 +76,12 @@ class Rectangle(Base):
         else:
             self.__y = value
 
-    '# public method area'
     def area(self):
+        '# public method area'
         return self.__width * self.__height
 
-    '# public method that prints in stdout #'
     def display(self):
+        '# public method that prints in stdout #'
         for line in range(self.__y):
             print()
         for line1 in range(self.__height):
@@ -91,13 +91,13 @@ class Rectangle(Base):
                 print('#', end="")
             print()
 
-    '# overriding the str method'
     def __str__(self):
+        '# overriding the str method'
         return f"[Rectangle] ({self.id}) {self.x}/{self.y}\
  - {self.width}/{self.height}"
 
-    '# print in stdout the rectangle isinstance with #'
     def update(self, *args, **kwargs):
+        '# print in stdout the rectangle isinstance with #'
         flag = 0
         for i in args:
             if flag == 0:
@@ -124,6 +124,6 @@ class Rectangle(Base):
                 if key == 'y':
                     self.__y = value
 
-    '# assign an argument to each attribute'
     def to_dictionary(self):
+        '# assign an argument to each attribute'
         return {'x': self.__x, 'y': self.__y, 'id': self.id, 'height': self.__height, 'width': self.__width}
