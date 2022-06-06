@@ -3,6 +3,7 @@
 
 
 from models.base import Base
+import json
 '# import class base'
 
 
@@ -126,5 +127,5 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         '# assign an argument to each attribute'
-        return f"'x': {self.__x} 'y': {self.__y} 'id': {self.id}\
- 'height': {self.__height}, 'width': {self.__width}"
+        return {'x': self.x, 'y': self.y, 'id': self.id,\
+ 'height': self.height, 'width': self.width}
