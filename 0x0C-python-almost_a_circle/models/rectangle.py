@@ -93,8 +93,8 @@ class Rectangle(Base):
 
     def __str__(self):
         '# overriding the str method'
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y}\
- - {self.width}/{self.height}"
+        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y}\
+ - {self.__width}/{self.__height}"
 
     def update(self, *args, **kwargs):
         '# print in stdout the rectangle isinstance with #'
