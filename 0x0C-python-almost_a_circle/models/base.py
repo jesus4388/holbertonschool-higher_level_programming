@@ -67,13 +67,14 @@ class Base:
         filename = cls.__name__ + ".json"
         new = {}
         lists = []
-        if cls is None:
-            return new
-        else:
-            my_string = json.dumps(new)
-            new = cls.from_json_string(my_string)
+        if cls is not None:
             with open(filename, "r") as f:
                 new = json.load(f)
-            for i in new:
-                lists.append(cls.create(**i))
+        else:
             return lists
+
+        my_string = json.dumps(new)
+        new = cls.from_json_string(my_string)
+        for i in new:
+            lists.append(cls.create(**i))
+        return lists
