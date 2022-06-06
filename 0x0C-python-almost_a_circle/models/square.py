@@ -11,9 +11,7 @@ class Square(Rectangle):
 
     def __init__(self, size, x=0, y=0, id=None):
         '# class constructor'
-
         super().__init__(size, size, x, y, id)
-        '# Call the super class'
 
     def __str__(self):
         '# overloading __str__ method'
