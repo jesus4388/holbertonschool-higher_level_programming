@@ -67,10 +67,10 @@ class Base:
         filename = cls.__name__ + ".json"
         new = {}
         lists = []
-        if cls is not None:
+        try:
             with open(filename, "r") as f:
                 new = json.load(f)
-        else:
+        except Exception:
             return lists
 
         my_string = json.dumps(new)
