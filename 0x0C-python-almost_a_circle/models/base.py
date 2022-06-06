@@ -70,6 +70,8 @@ class Base:
         if cls is None:
             return new
         else:
+            my_string = json.dumps(new)
+            new = cls.from_json_string(my_string)
             with open(filename, "r") as f:
                 new = json.load(f)
             for i in new:
