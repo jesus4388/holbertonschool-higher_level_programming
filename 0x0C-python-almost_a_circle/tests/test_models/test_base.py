@@ -1,4 +1,4 @@
-#%/usr/bin/python3
+#!/usr/bin/python3
 '# interactive test'
 
 import unittest
@@ -17,7 +17,7 @@ class test_base(unittest.TestCase):
 
     def test_id_empty(self):
         '# test id empty'
-        self.assertTrue(Base(1).id, 1)
+        self.assertEqual(Base(1).id, 1)
 
     def test_id_integer(self):
         '# test id integer'
@@ -41,7 +41,7 @@ class test_base(unittest.TestCase):
 
     def test_Bool(self):
         '# test id booleano'
-        self.assertTrue(Base(True).id, 1)
+        self.assertEqual(Base(True).id, 1)
 
     def test_Bool_false(self):
         '# test id False'
@@ -49,50 +49,23 @@ class test_base(unittest.TestCase):
 
     def test_json(self):
         '# test return string representation of json'
-            r1 = Rectangle(10, 7, 2, 8)
-            dictionary = r1.to_dictionary()
-            self.assertEqual(Base.to_json_string([dictionary]), [{"x": 2, "width": 10, "id": 1, "height": 7, "y": 8}])
+        self.r1 = Rectangle(10, 7, 2, 8)
+        self.dictionary = self.r1.to_dictionary()
+        self.json_dictionary = Base.to_json_string([self.dictionary])
+        
+        with redirect_stdout(io.StringIO()) as f:
+            print(self.json_dictionary)
+        self.assertEqual(f.getvalue(), '[{"x": 2, "y": 8, "id": 2, "height": 7, "width": 10}]\n')
+        self.assertEqual(type(f.getvalue()), str)
 
-    def test_json1(self):
-        '#  test return string representation of json'
-            r1 = Rectangle(10, 7, 2, 15)
-            dictionary = r1.to_dictionary()
-            r2 = [{"x": 2, "width": 10, "id": 1, "height": 7, "y": 15}]
-            self.assertEqual(Base.to_json_string([dictionary]), r2)
-
-    def test_dict_None(self):
         '# test None'
-        self.assertTrue(Base.to_json_string([None]),[])
+        self.assertEqual(Base.to_json_string([None]), '[null]')
 
-    def test_dict_Empty(self):
         '# test Empty'
-        self.assertTrue(Base.to_json_string(['']),[])
+        self.assertEqual(Base.to_json_string(['']),'[""]')
 
-    def test_integer_negative(self):
-        '# test negative'
-        r1 = {'x': -2, 'width': -10, 'id': -1, 'height': -7, 'y': 8}
-        r2 = Base.to_json_string
-        r3 = [{"x": -2, "width": -10, "id": -1, "height": -7, "y": 8}]
-
-        self.assertTrue(Base.to_json_string([r1]), r1)
-
-    def test_list_empty(self):
         '# save an empty list'
-        from models.rectangle import Rectangle
-            r1 = Rectangle()
-            r2 = Rectangle()
-            self.assertTrue(Rectangle.save_to_file([r1], [r2]), [])
+        self.assertFalse(Rectangle.save_to_file([]), [])
 
-    def test_list_none(self):
-        '# save an empty list'
-        from models.rectangle import Rectangle
-            r1 = Rectangle(None)
-            r2 = Rectangle(None)
-            self.assertTrue(Rectangle.save_to_file([r1], [r2]), 22)
-
-    def test_list_integer(self):
-        '# save an list'
-        from models.rectangle import Rectangle
-            r1 = Rectangle(10, 7, 2, 8)
-            r2 = Rectangle(2, 4)
-            self.assertTrue(Rectangle.save_to(r1, r2), 23)
+    if __name__ == "__main__":
+        unittest.main()
