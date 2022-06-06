@@ -16,19 +16,16 @@ class Base:
 
     def __init__(self, id=None):
         '# method constructor'
-
-        self.id = id
-        
-        if self.id == None:
+ 
+        if id is None:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
         else:
             self.id = id
 
     def to_json_string(list_dictionaries):
-        if list_dictionaries == None or len(list_dictionaries) == 0:
-            list_dictionaries = []
-            return list_dictionaries
+        if len(list_dictionaries) == 0 or list_dictionaries == None:
+            return []
         else:
             return json.dumps(list_dictionaries)
 
@@ -36,7 +33,8 @@ class Base:
     def save_to_file(cls, list_objs):
         lists = []
         if list_objs == None:
-            return lists
+            with open(cls.__name__ + ".json", "w") as f:
+                f.write([])
         else:
             for i in list_objs:
                 lists.append(cls.to_dictionary(i))
@@ -52,6 +50,21 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        new = cls(1, 2)
-        new.update(**dictionary)
-        return(new)
+        dum = cls(1, 2)
+        dum.update(**dictionary)
+        return(dum)
+    
+    @classmethod
+    def load_from_file(cls):
+        filename = cls.__name__ + ".json"
+        new = {}
+        lists = []
+        if cls == None:
+            return new
+        else:
+            with open(filename, "r") as f:
+                new = json.load(f)
+            for i in new:
+                lists.append(cls.create(**i))
+            return lists
+
