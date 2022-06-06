@@ -23,6 +23,7 @@ class Base:
 
     '# return representation string of json'
     def to_json_string(list_dictionaries):
+        '# return representation string of json'
         if len(list_dictionaries) == 0 or list_dictionaries == (None):
             return []
         else:
@@ -31,6 +32,7 @@ class Base:
     '# save to file'
     @classmethod
     def save_to_file(cls, list_objs):
+        '# save to file'
         lists = []
         if list_objs == (None):
             with open(cls.__name__ + ".json", "w") as f:
@@ -44,6 +46,7 @@ class Base:
     '# from json string'
     @staticmethod
     def from_json_string(json_string):
+        '# from json string'
         if json_string == (None) or len(json_string) == 0:
             return []
         else:
@@ -52,6 +55,7 @@ class Base:
     '# dummy instance'
     @classmethod
     def create(cls, **dictionary):
+        '# dummy instance'
         dum = cls(1, 2)
         dum.update(**dictionary)
         return(dum)
@@ -59,6 +63,7 @@ class Base:
     '# load file'
     @classmethod
     def load_from_file(cls):
+        '# load file'
         filename = cls.__name__ + ".json"
         new = {}
         lists = []
