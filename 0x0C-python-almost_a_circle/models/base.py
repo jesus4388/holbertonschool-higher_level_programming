@@ -35,7 +35,8 @@ class Base:
         '# save to file'
         lists = []
         if list_objs is None:
-            return []
+            with open(cls.__name__ + ".json", "w") as f:
+                f.write(cls.to_json_string(lists))
         else:
             for i in list_objs:
                 lists.append(cls.to_dictionary(i))
