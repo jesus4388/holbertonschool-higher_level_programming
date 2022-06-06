@@ -11,6 +11,10 @@ import io
 class test_base(unittest.TestCase):
     '# clss test base'
 
+    def test_set(self):
+        '# set'
+        Base._base__nb_objects = 0
+
     def test_function(self):
         '# test doc function'
         self.assertTrue(len(Base.__doc__), 1)
