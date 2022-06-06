@@ -60,6 +60,7 @@ class test_base(unittest.TestCase):
         with redirect_stdout(io.StringIO()) as f:
             print(self.json_dictionary)
         self.assertEqual(f.getvalue(), '[{"x": 2, "y": 8, "id": 2, "height": 7, "width": 10}]\n')
+        '# test type'
         self.assertEqual(type(f.getvalue()), str)
 
         '# test None'
@@ -70,6 +71,16 @@ class test_base(unittest.TestCase):
 
         '# save an empty list'
         self.assertFalse(Rectangle.save_to_file([]), [])
+
+    def test_save_to_file(self):
+        '# writes the JSON string representation of list_objs to a file:'
+        self.r1 = Rectangle(10, 7, 2, 8)
+        self.r2 = Rectangle(2, 4)
+        Rectangle.save_to_file([self.r1, self.r2])
+
+        with redirect_stdout(io.StringIO()) as f:
+            print(Rectangle.save_to_file([self.r1, self.r2]))
+        self.assertEqual(f.getvalue(),'None\n')
 
     if __name__ == "__main__":
         unittest.main()
