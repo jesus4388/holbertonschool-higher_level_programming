@@ -6,6 +6,7 @@ from models.base import Base
 from contextlib import redirect_stdout
 from models.rectangle import Rectangle
 import io
+import json
 
 
 class test_base(unittest.TestCase):
@@ -78,6 +79,9 @@ class test_base(unittest.TestCase):
         with open("Rectangle.json") as f:
             self.read = f.read()
         self.assertEqual(self.read, '[{"x": 2, "y": 8, "id": 1, "height": 7, "width": 10}, {"x": 0, "y": 0, "id": 2, "height": 4, "width": 2}]')
+
+        '# test type'
+        self.assertEqual(type(self.read), str)
 
     if __name__ == "__main__":
         unittest.main()
