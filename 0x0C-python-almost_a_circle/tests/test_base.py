@@ -83,5 +83,20 @@ class test_base(unittest.TestCase):
         '# test type'
         self.assertEqual(type(self.read), str)
 
+
+    def from_json_string(self):
+        '# returns the list of the JSON string representation json_string'
+        Base._Base__nb_objects = 0
+        self.list_input = [
+            {'id': 89, 'width': 10, 'height': 4}, 
+            {'id': 7, 'width': 1, 'height': 7}
+        ]
+        self.json_list_input = Rectangle.to_json_string(self.list_input)
+        self.list_output = Rectangle.from_json_string(self.json_list_input)
+        self.assertEqual(self.list_output, [{'height': 4, 'width': 10, 'id': 89}, {'height': 7, 'width': 1, 'id': 7}])
+
+        self.lists = []
+        self.assertEqual(self.lists, [])
+
     if __name__ == "__main__":
         unittest.main()
