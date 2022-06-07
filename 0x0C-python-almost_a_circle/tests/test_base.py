@@ -11,10 +11,6 @@ import io
 class test_base(unittest.TestCase):
     '# clss test base'
 
-    def test_set(self):
-        '# set'
-        Base._base__nb_objects = 0
-
     def test_function(self):
         '# test doc function'
         self.assertTrue(len(Base.__doc__), 1)
@@ -74,13 +70,14 @@ class test_base(unittest.TestCase):
 
     def test_save_to_file(self):
         '# writes the JSON string representation of list_objs to a file:'
+        Base._Base__nb_objects = 0
         self.r1 = Rectangle(10, 7, 2, 8)
         self.r2 = Rectangle(2, 4)
         Rectangle.save_to_file([self.r1, self.r2])
 
-        with redirect_stdout(io.StringIO()) as f:
-            print(Rectangle.save_to_file([self.r1, self.r2]))
-        self.assertEqual(f.getvalue(),'None\n')
+        with open("Rectangle.json") as f:
+            self.read = f.read()
+        self.assertEqual(self.read, '[{"x": 2, "y": 8, "id": 1, "height": 7, "width": 10}, {"x": 0, "y": 0, "id": 2, "height": 4, "width": 2}]')
 
     if __name__ == "__main__":
         unittest.main()
