@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 '# Write the first class Base'
 
-
+import csv
 import json
-'i# import json'
+'# import json'
 
 
 class Base:
@@ -77,4 +77,35 @@ class Base:
         new = cls.from_json_string(my_string)
         for i in new:
             lists.append(cls.create(**i))
+        return lists
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        '# serializes and deserializes in CSV'
+        lists = []
+        for i in list_objs:
+            lists.append(cls.to_dictionary(i))
+
+        with open(cls.__name__ + ".csv", 'w') as files:
+            if cls.__name__ == "Rectangle":
+                fieldnames = ['id', 'width', 'height', 'x', 'y']
+            if cls.__name__ == "Square":
+                fieldnames = ['id', 'size', 'x', 'y']
+            writer = csv.DictWriter(files, fieldnames=fieldnames)
+            writer.writeheader()
+            writer.writerows(lists)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        '# deserializes'
+        lists = []
+        try:
+            with open(cls.__name__ + ".csv", 'r') as files:
+                reader = csv.DictReader(files)
+                for row in reader:
+                    for key, value in row.items():
+                        row[key] = int(value)
+                    lists.append(cls.create(**row))
+        except Exception:
+            return lists
         return lists

@@ -93,10 +93,10 @@ class test_base(unittest.TestCase):
         ]
         self.json_list_input = Rectangle.to_json_string(self.list_input)
         self.list_output = Rectangle.from_json_string(self.json_list_input)
-        self.assertEqual(self.list_output, [{'height': 4, 'width': 10, 'id': 89}, {'height': 7, 'width': 1, 'id': 7}])
 
-        self.lists = []
-        self.assertEqual(self.lists, [])
+        with redirect_stdout(io.StringIO()) as f:
+            print(self.list_output)
+        self.assertEqual(f.getvalue(), "[{'height': 35, 'width': 10, 'id': 89}, {'height': 7, 'width': 1, 'id': 7}]\n")
 
     if __name__ == "__main__":
         unittest.main()
