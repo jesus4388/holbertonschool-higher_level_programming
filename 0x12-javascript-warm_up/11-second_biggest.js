@@ -21,5 +21,5 @@ if (process.argv.length > 3) {
     console.log(b);
   }
 } else {
-  console.log(1);
+  console.log(0);
 }
