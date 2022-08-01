@@ -13,7 +13,11 @@ if (process.argv.length > 3) {
       a = array[c];
     }
   }
-  console.log(b);
+  if (b < a) {
+    console.log(a);
+  } else {
+    console.log(b);
+  }
 } else {
   console.log(1);
 }
