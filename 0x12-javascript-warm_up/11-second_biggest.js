@@ -2,7 +2,7 @@
 if (process.argv.length > 3) {
   const array = [];
   for (let i = 2, j = 0; i < process.argv.length; i++, j++) {
-    array[j] = process.argv[i];
+    array[j] = parseInt(process.argv[i]);
   }
   array.sort();
   let a = 0;
