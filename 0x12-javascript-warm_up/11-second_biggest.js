@@ -7,13 +7,15 @@ if (process.argv.length > 3) {
   array.sort();
   let a = 0;
   let b = 0;
+  let count = 0;
   for (let c = 0; c < array.length; c++) {
     if (a < array[c]) {
       b = a;
       a = array[c];
+      count++;
     }
   }
-  if (b < a) {
+  if (count < 2) {
     console.log(a);
   } else {
     console.log(b);
