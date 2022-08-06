@@ -7,9 +7,14 @@ from sqlalchemy import Table
 
 Base = declarative_base()
 
+
 class State(Base):
+    '# contains the class definition of a State'
 
     __tablename__ = 'states'
-    __table_args__ = {'mysql_engine': 'InnoDB', 'mysql_default_charset': 'latin1'}
+    __table_args__ = {
+            'mysql_engine': 'InnoDB',
+            'mysql_default_charset': 'latin1'
+            }
     id = Column(Integer, primary_key=True, nullable=False)
     name = Column(String(128), nullable=False)
