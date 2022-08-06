@@ -13,12 +13,12 @@ if __name__ == "__main__":
             password=argv[2],
             db=argv[3]
             )
-    cursor = db_conection.cursor()
-    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id")
-    resultado = cursor.fetchall()
+    cur = db_conection.cursor()
+    cur.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id")
+    resultado = cur.fetchall()
 
     for x in resultado:
         print(x)
 
-    cursor.close()
+    cur.close()
     db_conection.close()
