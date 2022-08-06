@@ -15,7 +15,7 @@ if __name__ == "__main__":
             )
     cur = db_conection.cursor()
     a = argv[4]
-    cur.execute("SELECT * FROM states WHERE name='{}' ORDER BY id".format(a))
+    cur.execute("SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY id".format(a))
     resultado = cur.fetchall()
 
     for i in resultado:
