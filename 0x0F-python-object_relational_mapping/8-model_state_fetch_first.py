@@ -12,8 +12,10 @@ if __name__ == "__main__":
         argv[1], argv[2], argv[3]), pool_pre_ping=True)
 
     session = Session(engine)
-    for i in session.query(State).order_by(State.id).all():
-        print("{}: {}".format(i.id, i.name))
-        break
+    resultado = session.query(State).first()
+    try:
+        print("{}: {}".format(resultado.id, resultado.name))
+    except Exception:
+        print(Nothing)
 
     session.close()
