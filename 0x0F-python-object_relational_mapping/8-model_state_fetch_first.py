@@ -13,9 +13,9 @@ if __name__ == "__main__":
 
     session = Session(engine)
     resultado = session.query(State).order_by(State.id).first()
-    if(resultado.id and resultado.name):
+    try:
         print("{}: {}".format(resultado.id, resultado.name))
-    else:
-        print(Nothing)
+    except Exception:
+        print("Nothing")
 
     session.close()
