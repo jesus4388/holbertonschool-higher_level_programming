@@ -15,7 +15,7 @@ if __name__ == "__main__":
     for i in session.query(State).where(State.name == argv[4]).order_by(
             State.id).all():
         try:
-            print(i.id)
+            print("{}".format(i.id))
         except Exception:
             print("Not found")
 
