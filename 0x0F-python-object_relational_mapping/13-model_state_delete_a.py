@@ -13,7 +13,7 @@ if __name__ == "__main__":
     session = Session(engine)
     for i in session.query(State).all():
         for x in i.name:
-            if x == 'a':
+            if x == 'a' or x == 'A':
                 session.delete(i)
 
     session.commit()
