@@ -12,11 +12,12 @@ if __name__ == "__main__":
         argv[1], argv[2], argv[3]), pool_pre_ping=True)
 
     session = Session(engine)
-    for i in session.query(State).where(State.name == argv[4]).order_by(
-            State.id).all():
-        try:
+    flag = 0;
+    for i in session.query(State).order_by(State.id).all():
+        if (i.name == argv[4]):
             print("{}".format(i.id))
-        except Exception:
-            print("Not found")
+            flag = 1;
+    if flag == 0:
+        print("Not found")
 
     session.close()
