@@ -18,3 +18,5 @@ if __name__ == "__main__":
             print(i.id)
         except Exception:
             print("Not found")
+
+    session.close()
