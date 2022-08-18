@@ -1,3 +1,3 @@
 #!/bin/bash
 #Bash script that takes in a URL
-curl -s GET "$1"
+curl -sL GET "$1"
