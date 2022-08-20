@@ -5,15 +5,14 @@ from sys import argv
 
 if __name__ == "__main__":
     if len(argv) > 1:
-        ap = argv[1]
+        ap = {'q': argv[1]}
     else:
-        ap = ""
-    r = requests.post('http://0.0.0.0:5000/search_user', data={'ap': ap})
+        ap = {'q': ""}
     try:
-        jd = r.json()
-        if len(jd.keys()) > 0:
-            print("[{:}] {:}".format(jd.get('id'), jd.get('name')))
-        else:
+        r = requests.post('http://0.0.0.0:5000/search_user', ap).json()
+        if len(r) == 0:
             print("No result")
+        else:
+            print("[{}] {}".format(r['id'], r['name']))
     except Exception:
         print("Not a valid JSON")
