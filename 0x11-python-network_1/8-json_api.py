@@ -8,7 +8,7 @@ if __name__ == "__main__":
         ap = argv[1]
     else:
         ap = ""
-    r = requests.post('', data={'ap': ap})
+    r = requests.post('http://0.0.0.0:5000/search_user', data={'ap': ap})
     try:
         jd = r.json()
         if len(jd.keys()) > 0:
