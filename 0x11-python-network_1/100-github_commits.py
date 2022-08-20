@@ -10,8 +10,8 @@ if __name__ == "__main__":
     response = requests.get(
             'https://api.github.com/repos/{}/{}/commits'.format(
                 ownern, rname)).json()
-    for i in range(0, 10):
-        if response[i]:
+    for it in range(0, 10):
+        if response[it]:
             print("{}: {}".format(
-                response[i].get('sha'), response[i].get(
+                response[it].get('sha'), response[it].get(
                     'commit').get('author').get('name')))
