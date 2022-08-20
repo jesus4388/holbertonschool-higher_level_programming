@@ -1,5 +1,5 @@
-#!/usr/bin/python3 
-'# python script that takes in a URL and an email' 
+#!/usr/bin/python3
+'# python script that takes in a URL and an email'
 from sys import argv
 import urllib.request
 from urllib.error import HTTPError
