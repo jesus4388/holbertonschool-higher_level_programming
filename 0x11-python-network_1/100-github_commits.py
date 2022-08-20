@@ -10,8 +10,14 @@ if __name__ == "__main__":
     response = requests.get(
             'https://api.github.com/repos/{}/{}/commits'.format(
                 ownern, rname)).json()
-    for it in range(0, 10):
-        if response[it]:
+    if len(response) > 0:
+        iterador = 10
+    else:
+        iterador = len(response)
+    try:
+        for it in range(iterador):
             print("{}: {}".format(
                 response[it].get('sha'), response[it].get(
                     'commit').get('author').get('name')))
+    except Exception:
+        pass
