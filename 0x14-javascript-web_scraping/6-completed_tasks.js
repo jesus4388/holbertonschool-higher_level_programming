@@ -22,7 +22,7 @@ axios.get(process.argv[2])
         dict[data[dat].userId] = value += 1;
       }
     }
-    if (dict[value] !== 0) {
+    if (dict[data[dat].userId] !== 0) {
       console.log(dict);
     }
   })
